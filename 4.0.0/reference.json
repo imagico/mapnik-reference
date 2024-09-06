@@ -1,5 +1,5 @@
 {
-    "version": "3.0.22",
+    "version": "4.0.0",
     "style": {
         "filter-mode": {
             "type": [
@@ -66,6 +66,20 @@
                 ["scale-hsla", 8]
             ],
             "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)."
+        },
+        "gmic": {
+            "css": "gmic",
+            "default-value": "",
+            "type":"string",
+            "default-meaning": "Do not perform GMIC processing",
+            "doc": "GMIC command to process the layer in combination with GMIC image stack from previous layers"
+        },
+        "gmic-after": {
+            "css": "gmic-after",
+            "default-value": "",
+            "type":"string",
+            "default-meaning": "Do not perform GMIC processing after compositioning",
+            "doc": "GMIC command to process the layer after compositioning in combination with GMIC image stack from previous layers"
         },
         "comp-op": {
             "css": "comp-op",
@@ -467,6 +481,14 @@
                     "value"
                 ],
                 "expression":true
+            },
+            "anchor-cond": {
+                "css": "polygon-anchor-cond",
+                "type": "string",
+                "expression":true,
+                "default-value": "",
+                "default-meaning": "No anchor condition for this marker.",
+                "doc": "Anchor condition for deciding if this symbolizer is drawn."
             }
         },
         "line": {
@@ -692,6 +714,14 @@
                     "value"
                 ],
                 "expression":true
+            },
+            "anchor-cond": {
+                "css": "line-anchor-cond",
+                "type": "string",
+                "expression":true,
+                "default-value": "",
+                "default-meaning": "No anchor condition for this marker.",
+                "doc": "Anchor condition for deciding if this symbolizer is drawn."
             }
         },
         "markers": {
@@ -1778,6 +1808,14 @@
                 "doc": "A pair of length values [a,b], where (a) is the dash length and (b) is the gap length respectively. More than two values are supported for more complex patterns. Used for rendering line pattern of type `repeat`.",
                 "default-value": "none",
                 "default-meaning": "The line will be drawn without dashes."
+            },
+            "anchor-cond": {
+                "css": "line-pattern-anchor-cond",
+                "type": "string",
+                "expression":true,
+                "default-value": "",
+                "default-meaning": "No anchor condition for this marker.",
+                "doc": "Anchor condition for deciding if this symbolizer is drawn."
             }
         },
         "polygon-pattern": {
@@ -1938,6 +1976,14 @@
                     "value"
                 ],
                 "expression":true
+            },
+            "anchor-cond": {
+                "css": "polygon-pattern-anchor-cond",
+                "type": "string",
+                "expression":true,
+                "default-value": "",
+                "default-meaning": "No anchor condition for this marker.",
+                "doc": "Anchor condition for deciding if this symbolizer is drawn."
             }
         },
         "raster": {
